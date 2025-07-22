@@ -39,25 +39,33 @@ const connectDB = async () => {
     // });
 
     //! document using insertMany
-    const results = await students.insertMany([
-      {
-        name: "Alexander",
-        age: 7,
-        subjects: ["English", "Marathi", "Maths"],
-      },
-      {
-        name: "Lola",
-        age: 2,
-        subjects: ["English", "Marathi", "Maths"],
-      },
-      {
-        name: "Barry",
-        age: 16,
-        subjects: ["English", "Marathi", "Maths"],
-      },
-    ]);
+    // const results = await students.insertMany([
+    //   {
+    //     name: "Alexander",
+    //     age: 7,
+    //     subjects: ["English", "Marathi", "Maths"],
+    //   },
+    //   {
+    //     name: "Lola",
+    //     age: 2,
+    //     subjects: ["English", "Marathi", "Maths"],
+    //   },
+    //   {
+    //     name: "Barry",
+    //     age: 16,
+    //     subjects: ["English", "Marathi", "Maths"],
+    //   },
+    // ]);
 
-    console.log(results);
+    //! Read operation
+    // ! find()
+    // const resultCluster = students.find();
+    // const result = await resultCluster.toArray();
+
+    // ! find()
+    const stu = await students.findOne({ age: 16 });
+
+    console.log(stu);
   } catch (error) {
     console.log("error connecting the db");
   }
