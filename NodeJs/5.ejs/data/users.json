@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "name": "Alice Johnson",
+    "email": "alice.johnson@example.com",
+    "username": "alicej",
+    "role": "admin",
+    "isActive": true,
+    "createdAt": "2024-01-15T10:00:00Z",
+    "avatar": "https://i.pravatar.cc/150?img=1"
+  },
+  {
+    "id": 2,
+    "name": "Bob Smith",
+    "email": "bob.smith@example.com",
+    "username": "bob_s",
+    "role": "user",
+    "isActive": true,
+    "createdAt": "2024-02-10T09:30:00Z",
+    "avatar": "https://i.pravatar.cc/150?img=2"
+  },
+  {
+    "id": 3,
+    "name": "Clara Lee",
+    "email": "clara.lee@example.com",
+    "username": "claralee",
+    "role": "moderator",
+    "isActive": false,
+    "createdAt": "2023-12-25T14:15:00Z",
+    "avatar": "https://i.pravatar.cc/150?img=3"
+  },
+  {
+    "id": 4,
+    "name": "Daniel Brown",
+    "email": "daniel.b@example.com",
+    "username": "danbrown",
+    "role": "user",
+    "isActive": true,
+    "createdAt": "2024-03-01T11:45:00Z",
+    "avatar": "https://i.pravatar.cc/150?img=4"
+  },
+  {
+    "id": 5,
+    "name": "Eva Green",
+    "email": "eva.green@example.com",
+    "username": "evagreen",
+    "role": "admin",
+    "isActive": true,
+    "createdAt": "2024-04-12T13:00:00Z",
+    "avatar": "https://i.pravatar.cc/150?img=5"
+  },
+  {
+    "id": 6,
+    "name": "Frank Wilson",
+    "email": "frank.w@example.com",
+    "username": "frankie",
+    "role": "user",
+    "isActive": false,
+    "createdAt": "2024-01-29T08:20:00Z",
+    "avatar": "https://i.pravatar.cc/150?img=6"
+  },
+  {
+    "id": 7,
+    "name": "Grace Hall",
+    "email": "grace.h@example.com",
+    "username": "gracey",
+    "role": "moderator",
+    "isActive": true,
+    "createdAt": "2024-05-05T15:35:00Z",
+    "avatar": "https://i.pravatar.cc/150?img=7"
+  },
+  {
+    "id": 8,
+    "name": "Henry Adams",
+    "email": "henry.adams@example.com",
+    "username": "henad",
+    "role": "user",
+    "isActive": true,
+    "createdAt": "2023-11-18T17:10:00Z",
+    "avatar": "https://i.pravatar.cc/150?img=8"
+  },
+  {
+    "id": 9,
+    "name": "Irene Walker",
+    "email": "irene.walker@example.com",
+    "username": "irenew",
+    "role": "user",
+    "isActive": true,
+    "createdAt": "2024-06-21T10:50:00Z",
+    "avatar": "https://i.pravatar.cc/150?img=9"
+  },
+  {
+    "id": 10,
+    "name": "Jack Turner",
+    "email": "jack.turner@example.com",
+    "username": "jackt",
+    "role": "admin",
+    "isActive": false,
+    "createdAt": "2023-09-09T16:40:00Z",
+    "avatar": "https://i.pravatar.cc/150?img=10"
+  }
+]

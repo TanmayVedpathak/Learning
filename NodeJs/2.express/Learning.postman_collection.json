@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "1b7bf2a8-3d08-4b44-8bb9-146b2964ace9",
+		"name": "Learning",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "18784133"
+	},
+	"item": [
+		{
+			"name": "products-home",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{local_domian}}"
+			},
+			"response": []
+		},
+		{
+			"name": "get products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{local_domian}}products"
+			},
+			"response": []
+		},
+		{
+			"name": "post products",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": 11,\r\n        \"name\": \"Wireless Bluetooth Mouse\",\r\n        \"description\": \"wireless and long duration mouse.\",\r\n        \"price\": 69.99,\r\n        \"category\": \"Electronics\",\r\n        \"brand\": \"Niffler\",\r\n        \"rating\": 4.5,\r\n        \"inStock\": true,\r\n        \"image\": \"https://example.com/images/headphones.jpg\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{local_domian}}product"
+			},
+			"response": []
+		},
+		{
+			"name": "delete products",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": 11,\r\n        \"name\": \"Wireless Bluetooth Mouse\",\r\n        \"description\": \"wireless and long duration mouse.\",\r\n        \"price\": 69.99,\r\n        \"category\": \"Electronics\",\r\n        \"brand\": \"Niffler\",\r\n        \"rating\": 4.5,\r\n        \"inStock\": true,\r\n        \"image\": \"https://example.com/images/headphones.jpg\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{local_domian}}product/11"
+			},
+			"response": []
+		},
+		{
+			"name": "get particular products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{local_domian}}products/19"
+			},
+			"response": []
+		}
+	]
+}

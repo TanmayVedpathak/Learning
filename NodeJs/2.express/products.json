@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "name": "Wireless Bluetooth Headphones",
+    "description": "Noise-cancelling over-ear headphones with long battery life.",
+    "price": 79.99,
+    "category": "Electronics",
+    "brand": "SoundWave",
+    "rating": 4.5,
+    "inStock": true,
+    "image": "https://example.com/images/headphones.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Organic Cotton T-Shirt",
+    "description": "Soft and breathable t-shirt made from 100% organic cotton.",
+    "price": 19.99,
+    "category": "Clothing",
+    "brand": "EcoWear",
+    "rating": 4.2,
+    "inStock": true,
+    "image": "https://example.com/images/tshirt.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Stainless Steel Water Bottle",
+    "description": "Insulated bottle keeps drinks hot or cold for hours.",
+    "price": 24.99,
+    "category": "Home & Kitchen",
+    "brand": "HydroMate",
+    "rating": 4.7,
+    "inStock": true,
+    "image": "https://example.com/images/bottle.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Smart LED Light Bulb",
+    "description": "Color-changing LED bulb with voice and app control.",
+    "price": 14.99,
+    "category": "Electronics",
+    "brand": "BrightHome",
+    "rating": 4.3,
+    "inStock": false,
+    "image": "https://example.com/images/bulb.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Laptop Backpack",
+    "description": "Water-resistant backpack with USB charging port.",
+    "price": 39.99,
+    "category": "Accessories",
+    "brand": "TravelPro",
+    "rating": 4.6,
+    "inStock": true,
+    "image": "https://example.com/images/backpack.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Gaming Mouse",
+    "description": "Ergonomic mouse with RGB lighting and programmable buttons.",
+    "price": 29.99,
+    "category": "Electronics",
+    "brand": "ProGamer",
+    "rating": 4.4,
+    "inStock": true,
+    "image": "https://example.com/images/mouse.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Yoga Mat",
+    "description": "Non-slip, eco-friendly mat for yoga and fitness workouts.",
+    "price": 21.99,
+    "category": "Fitness",
+    "brand": "ZenFlex",
+    "rating": 4.1,
+    "inStock": true,
+    "image": "https://example.com/images/yogamat.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Stainless Steel Cookware Set",
+    "description": "10-piece set including pots, pans, and lids.",
+    "price": 89.99,
+    "category": "Home & Kitchen",
+    "brand": "ChefPro",
+    "rating": 4.8,
+    "inStock": false,
+    "image": "https://example.com/images/cookware.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Leather Wallet",
+    "description": "Slim and stylish RFID-blocking wallet.",
+    "price": 27.5,
+    "category": "Accessories",
+    "brand": "UrbanStyle",
+    "rating": 4.5,
+    "inStock": true,
+    "image": "https://example.com/images/wallet.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Portable Charger",
+    "description": "10,000mAh power bank with fast charging support.",
+    "price": 34.99,
+    "category": "Electronics",
+    "brand": "VoltCharge",
+    "rating": 4.6,
+    "inStock": true,
+    "image": "https://example.com/images/charger.jpg"
+  }
+]

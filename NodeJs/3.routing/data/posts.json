@@ -1,0 +1,112 @@
+[
+    {
+        "id": 1,
+        "title": "Understanding React Hooks",
+        "content": "Hooks are functions that let you use state and other React features without writing a class.",
+        "author": "Alice Johnson",
+        "authorId": 1,
+        "tags": ["react", "javascript", "frontend"],
+        "createdAt": "2024-06-15T09:30:00Z",
+        "likes": 15,
+        "commentsCount": 3
+    },
+    {
+        "id": 2,
+        "title": "Top 5 VS Code Extensions for Developers",
+        "content": "Boost your productivity with these essential VS Code extensions.",
+        "author": "Bob Smith",
+        "authorId": 2,
+        "tags": ["vscode", "productivity", "tools"],
+        "createdAt": "2024-06-17T12:00:00Z",
+        "likes": 23,
+        "commentsCount": 5
+    },
+    {
+        "id": 3,
+        "title": "JavaScript Array Methods You Should Know",
+        "content": "Learn how to effectively use map, filter, reduce, and more.",
+        "author": "Clara Lee",
+        "authorId": 3,
+        "tags": ["javascript", "array", "methods"],
+        "createdAt": "2024-06-20T15:45:00Z",
+        "likes": 30,
+        "commentsCount": 8
+    },
+    {
+        "id": 4,
+        "title": "Beginner’s Guide to TypeScript",
+        "content": "TypeScript adds strong typing to JavaScript and helps catch errors early.",
+        "author": "Daniel Brown",
+        "authorId": 4,
+        "tags": ["typescript", "javascript", "programming"],
+        "createdAt": "2024-06-22T10:10:00Z",
+        "likes": 19,
+        "commentsCount": 2
+    },
+    {
+        "id": 5,
+        "title": "How to Build a REST API with Node.js",
+        "content": "Learn to build and structure RESTful APIs using Express and Node.js.",
+        "author": "Eva Green",
+        "authorId": 5,
+        "tags": ["nodejs", "api", "backend"],
+        "createdAt": "2024-06-25T11:20:00Z",
+        "likes": 25,
+        "commentsCount": 6
+    },
+    {
+        "id": 6,
+        "title": "Understanding Flexbox in CSS",
+        "content": "Flexbox is a powerful layout module that makes it easier to design flexible responsive layout structures.",
+        "author": "Frank Wilson",
+        "authorId": 6,
+        "tags": ["css", "flexbox", "web"],
+        "createdAt": "2024-06-27T13:35:00Z",
+        "likes": 10,
+        "commentsCount": 1
+    },
+    {
+        "id": 7,
+        "title": "Why You Should Learn Git and GitHub",
+        "content": "Version control is a must-have skill for developers working in teams.",
+        "author": "Grace Hall",
+        "authorId": 7,
+        "tags": ["git", "github", "collaboration"],
+        "createdAt": "2024-06-28T08:00:00Z",
+        "likes": 22,
+        "commentsCount": 4
+    },
+    {
+        "id": 8,
+        "title": "Responsive Design Tips for Mobile Web",
+        "content": "Make sure your website looks great on all screen sizes.",
+        "author": "Henry Adams",
+        "authorId": 8,
+        "tags": ["responsive", "design", "css"],
+        "createdAt": "2024-07-01T17:25:00Z",
+        "likes": 14,
+        "commentsCount": 2
+    },
+    {
+        "id": 9,
+        "title": "Intro to MongoDB for Beginners",
+        "content": "MongoDB is a popular NoSQL database used in modern web applications.",
+        "author": "Irene Walker",
+        "authorId": 9,
+        "tags": ["mongodb", "database", "backend"],
+        "createdAt": "2024-07-02T14:00:00Z",
+        "likes": 17,
+        "commentsCount": 3
+    },
+    {
+        "id": 10,
+        "title": "React vs Vue: Which One to Choose?",
+        "content": "Both React and Vue are great frameworks, but they have different philosophies.",
+        "author": "Jack Turner",
+        "authorId": 10,
+        "tags": ["react", "vue", "comparison"],
+        "createdAt": "2024-07-05T16:10:00Z",
+        "likes": 28,
+        "commentsCount": 7
+    }
+]
