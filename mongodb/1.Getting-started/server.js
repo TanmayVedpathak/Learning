@@ -67,7 +67,7 @@ const connectDB = async () => {
 
     console.log(stu);
   } catch (error) {
-    console.log("error connecting the db");
+    console.log("error:", error);
   }
 };
 
