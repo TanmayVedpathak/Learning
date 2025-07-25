@@ -63,8 +63,23 @@ const connectDB = async () => {
     // const result = await resultCluster.toArray();
 
     // ! find()
-    const stu = await students.findOne({ age: 16 });
+    // const stu = await students.findOne({ age: 16 });
 
+    // console.log(stu);
+
+    // ! update operation
+    await students.updateOne(
+      {
+        name: "Alexander",
+      },
+      {
+        $set: {
+          age: 20,
+        },
+      },
+    );
+
+    const stu = await students.findOne({ name: "Alexander" });
     console.log(stu);
   } catch (error) {
     console.log("error:", error);
