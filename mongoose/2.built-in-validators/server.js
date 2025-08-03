@@ -1,0 +1,67 @@
+const express = require("express");
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+
+dotenv.config();
+
+const app = express();
+
+const PORT = process.env.PORT || 5000;
+const MONGO_URL = process.env.MONGO_URL;
+
+const userProfileSchema = mongoose.Schema(
+  {
+    objectId: mongoose.Schema.Types.ObjectId,
+    username: {
+      type: String,
+      required: [true, "Please username is required"],
+      unique: true,
+      minLength: 3,
+      maxLength: 20,
+    },
+    email: {
+      type: String,
+      required: [true, "Please email is required"],
+      match: /@/,
+    },
+    age: {
+      type: Number,
+      required: [true, "Please age is required"],
+      min: 18,
+      max: 60,
+    },
+    gender: {
+      type: "String",
+      enum: ["Male", "Female", "Other"],
+      default: "Other",
+    },
+  },
+  {
+    timestamps: true,
+  },
+);
+
+const User = mongoose.model("User", userProfileSchema);
+
+const connectToDB = async () => {
+  try {
+    await mongoose.connect(MONGO_URL);
+    console.log("Mongodb connect successfully...");
+
+    const userCreated = await User.create({
+      username: "obscurus",
+      email: "test@gmail.com",
+      age: 18,
+      gender: "Male",
+    });
+    console.log(userCreated);
+  } catch (error) {
+    console.log("Error:", error);
+  }
+};
+
+connectToDB();
+
+app.listen(PORT, () => {
+  console.log(`Server is running at port: ${PORT}`);
+});

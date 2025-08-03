@@ -239,6 +239,20 @@ const connectToDB = async () => {
 
     // console.log(updatedDoc);
 
+    // ! update operator
+
+    const updatedUser = await User.findOneAndUpdate(
+      { username: "Sophia Zhang" },
+      {
+        $set: { username: "Alejandro" },
+        $addToSet: { hobbies: "Swimming" },
+        $inc: { age: 1 },
+      },
+      { new: true },
+    );
+
+    console.log(updatedUser);
+
     // ! --------------------------------- delete ---------------------------------
   } catch (error) {
     console.log("Error:", error);
