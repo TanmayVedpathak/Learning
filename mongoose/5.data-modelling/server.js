@@ -127,6 +127,63 @@ connectToDB();
 
 // createClassRoom();
 
+// ! author schema
+const authorSchema = new mongoose.Schema(
+  {
+    name: String,
+  },
+  {
+    timestamps: true,
+  },
+);
+
+const Author = mongoose.model("Author", authorSchema);
+
+// ! author schema
+const bookSchema = new mongoose.Schema(
+  {
+    title: String,
+    author: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Author",
+    },
+  },
+  {
+    timestamps: true,
+  },
+);
+
+const Book = mongoose.model("Book", bookSchema);
+
+// const createAuthor = async () => {
+//   try {
+//     const author = await Author.create({
+//       name: "Alice",
+//     });
+
+//     console.log(author);
+//   } catch (error) {
+//     console.log("Error:", error);
+//   }
+// };
+
+// createAuthor();
+
+const createBook = async () => {
+  try {
+    const book = await Book.create({
+      title: "Physic 101",
+      author: "689245c28aba3be112f2531b",
+    });
+
+    console.log(book);
+  } catch (error) {
+    console.log("Error:", error);
+  }
+};
+
+createBook();
+
 app.listen(PORT, () => {
   console.log(`Server is running at port: ${PORT}`);
 });
