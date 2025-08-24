@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upload File</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: #f5f5f5;
+      }
+      .upload-box {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: 320px;
+      }
+      input[type="file"] {
+        margin: 15px 0;
+      }
+      button {
+        padding: 10px 15px;
+        border: none;
+        background: #007bff;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #0056b3;
+      }
+      #preview {
+        margin-top: 15px;
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="upload-box">
+      <h2>Upload File</h2>
+      <form id="uploadForm" enctype="multipart/form-data">
+        <input
+          type="file"
+          name="file"
+          id="fileInput"
+          accept="image/*"
+          required
+        />
+        <br />
+        <button type="submit">Upload</button>
+      </form>
+      <p id="status"></p>
+      <img id="preview" src="" alt="" />
+    </div>
+
+    <script>
+      const form = document.getElementById("uploadForm");
+      const statusText = document.getElementById("status");
+      const preview = document.getElementById("preview");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const fileInput = document.getElementById("fileInput");
+        const file = fileInput.files[0];
+
+        if (!file) {
+          statusText.innerText = "Please select a file.";
+          return;
+        }
+
+        const formData = new FormData();
+        formData.append("file", file);
+
+        statusText.innerText = "Uploading...";
+
+        try {
+          const response = await fetch("/upload", {
+            method: "POST",
+            body: formData,
+          });
+
+          const result = await response.json();
+          if (response.ok) {
+            statusText.innerText = "Upload successful!";
+            if (result.url) {
+              preview.src = result.url; // Cloudinary URL from backend
+            }
+          } else {
+            statusText.innerText = "Error: " + result.error;
+          }
+        } catch (err) {
+          statusText.innerText = "Error uploading file.";
+        }
+      });
+    </script>
+  </body>
+</html>
