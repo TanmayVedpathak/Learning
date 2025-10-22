@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Socket.io</title>
+  </head>
+  <body>
+    <h1>Socket.io</h1>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      const socket = io();
+      socket.on("messageFromServer", (message) => {
+        console.log("message from server: ", message);
+      });
+
+      // Emit a message to the server
+      socket.emit("messageFromClient", "hello from client");
+    </script>
+  </body>
+</html>
