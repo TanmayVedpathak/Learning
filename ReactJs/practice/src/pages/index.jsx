@@ -3,6 +3,7 @@ import { lazy } from "react";
 const Home = lazy(() => import("./Home"));
 const Form = lazy(() => import("./Form"));
 const HookForm = lazy(() => import("./HookForm"));
+const Callback = lazy(() => import("./Callback"));
 const VirtualList = lazy(() => import("./VirtualList"));
 
 const pageList = [
@@ -20,6 +21,11 @@ const pageList = [
     title: "Hook Form",
     path: "/hook-form",
     component: HookForm,
+  },
+  {
+    title: "UseCallback hook",
+    path: "/useCallback-hook",
+    component: Callback,
   },
   {
     title: "Virtual List",

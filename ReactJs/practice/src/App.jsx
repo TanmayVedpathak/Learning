@@ -1,7 +1,7 @@
+import { Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import pageList from "./pages";
 import "./App.css";
-import { Suspense } from "react";
 
 const Loader = () => <div style={{ padding: 20 }}>Loading...</div>;
 
