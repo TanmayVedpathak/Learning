@@ -5,33 +5,8 @@ const Form = lazy(() => import("./Form"));
 const HookForm = lazy(() => import("./HookForm"));
 const Callback = lazy(() => import("./Callback"));
 const VirtualList = lazy(() => import("./VirtualList"));
+const CreatePostPage = lazy(() => import("./CreatePostPage"));
+const PostDetailsPage = lazy(() => import("./PostDetailsPage"));
+const PostsPage = lazy(() => import("./PostsPage"));
 
-const pageList = [
-  {
-    title: "Home",
-    path: "/",
-    component: Home,
-  },
-  {
-    title: "Form",
-    path: "/form",
-    component: Form,
-  },
-  {
-    title: "Hook Form",
-    path: "/hook-form",
-    component: HookForm,
-  },
-  {
-    title: "UseCallback hook",
-    path: "/useCallback-hook",
-    component: Callback,
-  },
-  {
-    title: "Virtual List",
-    path: "/virtual-list",
-    component: VirtualList,
-  },
-];
-
-export default pageList;
+export { Home, Form, HookForm, Callback, VirtualList, CreatePostPage, PostDetailsPage, PostsPage };
