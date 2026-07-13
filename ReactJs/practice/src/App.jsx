@@ -1,6 +1,6 @@
 import { createBrowserRouter, NavLink, RouterProvider } from "react-router-dom";
 
-import { Home, Form, HookForm, Callback, VirtualList, PostsPage, PostDetailsPage, CreatePostPage } from "./pages";
+import { Home, Form, HookForm, Callback, VirtualList, PostsPage, PostDetailsPage, CreatePostPage, SkeletonLoading } from "./pages";
 import { MainLayout, ErrorBoundary, Loader } from "./components";
 
 import { postsLoader, postDetailsLoader, createPostAction, updatePostAction, deletePostAction } from "./api/postsApi";
@@ -55,6 +55,10 @@ const router = createBrowserRouter([
       {
         path: "virtual-list",
         element: <VirtualList />,
+      },
+      {
+        path: "skeleton-loading",
+        element: <SkeletonLoading />,
       },
       {
         path: "posts",

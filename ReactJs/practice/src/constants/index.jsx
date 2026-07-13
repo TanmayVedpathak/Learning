@@ -20,6 +20,10 @@ const pageList = [
     path: "/virtual-list",
   },
   {
+    title: "Skeleton Loading",
+    path: "/skeleton-loading",
+  },
+  {
     title: "Posts",
     path: "/posts",
   },
