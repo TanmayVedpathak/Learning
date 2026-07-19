@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "title": "Juicy Cheese Burger",
+    "slug": "juicy-cheese-burger",
+    "image": "/images/burger.jpg",
+    "summary": "A mouth-watering burger with a juicy beef patty and melted cheese, served in a soft bun.",
+    "instructions": "\n      1. Prepare the patty:\n         Mix 200g of ground beef with salt and pepper. Form into a patty.\n\n      2. Cook the patty:\n         Heat a pan with a bit of oil. Cook the patty for 2-3 minutes each side, until browned.\n\n      3. Assemble the burger:\n         Toast the burger bun halves. Place lettuce and tomato on the bottom half. Add the cooked patty and top with a slice of cheese.\n\n      4. Serve:\n         Complete the assembly with the top bun and serve hot.\n    ",
+    "creator": "John Doe",
+    "creator_email": "johndoe@example.com"
+  },
+  {
+    "id": 2,
+    "title": "Spicy Curry",
+    "slug": "spicy-curry",
+    "image": "/images/curry.jpg",
+    "summary": "A rich and spicy curry, infused with exotic spices and creamy coconut milk.",
+    "instructions": "\n      1. Chop vegetables:\n         Cut your choice of vegetables into bite-sized pieces.\n\n      2. Sauté vegetables:\n         In a pan with oil, sauté the vegetables until they start to soften.\n\n      3. Add curry paste:\n         Stir in 2 tablespoons of curry paste and cook for another minute.\n\n      4. Simmer with coconut milk:\n         Pour in 500ml of coconut milk and bring to a simmer. Let it cook for about 15 minutes.\n\n      5. Serve:\n         Enjoy this creamy curry with rice or bread.\n    ",
+    "creator": "Max Schwarz",
+    "creator_email": "max@example.com"
+  }
+]
