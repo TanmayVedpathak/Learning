@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A beginner-friendly IndexedDB playground built with HTML, CSS, and TypeScript." />
+    <title>IndexedDB Learning Playground</title>
+  </head>
+  <body>
+    <header class="hero">
+      <div>
+        <p class="eyebrow">HTML + CSS + TypeScript</p>
+        <h1>IndexedDB Learning Playground</h1>
+        <p>Learn IndexedDB by creating, reading, updating, searching, paginating, exporting, importing, and deleting records.</p>
+      </div>
+      <div class="status-card">
+        <span id="database-status" class="status status-offline">Closed</span>
+        <strong id="record-count">0 records</strong>
+      </div>
+    </header>
+
+    <main class="layout">
+      <aside class="lesson-panel card">
+        <h2>Learning map</h2>
+        <ol>
+          <li><a href="#setup">Open and upgrade a database</a></li>
+          <li><a href="#crud">CRUD operations</a></li>
+          <li><a href="#search">Indexes and searching</a></li>
+          <li><a href="#pagination">Cursor pagination</a></li>
+          <li><a href="#advanced">Transactions and bulk actions</a></li>
+          <li><a href="#backup">Export, import, and delete</a></li>
+        </ol>
+
+        <div class="concept-box">
+          <h3>Core structure</h3>
+          <p><code>Database → Object Store → Record</code></p>
+          <p>An object store is similar to a table, but it stores JavaScript objects.</p>
+        </div>
+      </aside>
+
+      <section class="content">
+        <section id="setup" class="card section-card">
+          <div class="section-heading">
+            <div>
+              <span class="step">Step 1</span>
+              <h2>Database setup</h2>
+            </div>
+            <button id="open-db-button" class="button primary">Open database</button>
+          </div>
+
+          <div class="info-grid">
+            <article>
+              <h3>Database</h3>
+              <p><code>indexeddb-learning-db</code></p>
+            </article>
+            <article>
+              <h3>Object store</h3>
+              <p><code>tasks</code></p>
+            </article>
+            <article>
+              <h3>Primary key</h3>
+              <p><code>id</code>, auto-incremented</p>
+            </article>
+            <article>
+              <h3>Indexes</h3>
+              <p><code>title</code>, <code>priority</code>, <code>completed</code>, <code>createdAt</code></p>
+            </article>
+          </div>
+        </section>
+
+        <section id="crud" class="card section-card">
+          <div class="section-heading">
+            <div>
+              <span class="step">Step 2</span>
+              <h2>Create and update records</h2>
+            </div>
+            <span id="form-mode" class="pill">Create mode</span>
+          </div>
+
+          <form id="task-form" class="task-form">
+            <input id="task-id" type="hidden" />
+
+            <label>
+              Title
+              <input id="title" name="title" type="text" maxlength="80" required placeholder="Example: Learn object stores" />
+            </label>
+
+            <label>
+              Description
+              <textarea id="description" name="description" rows="3" maxlength="240" placeholder="What should be done?"></textarea>
+            </label>
+
+            <div class="form-row">
+              <label>
+                Priority
+                <select id="priority" name="priority">
+                  <option value="low">Low</option>
+                  <option value="medium" selected>Medium</option>
+                  <option value="high">High</option>
+                </select>
+              </label>
+
+              <label class="checkbox-label">
+                <input id="completed" name="completed" type="checkbox" />
+                Completed
+              </label>
+            </div>
+
+            <div class="button-row">
+              <button class="button primary" type="submit">Save task</button>
+              <button id="cancel-edit-button" class="button secondary" type="button" hidden>Cancel edit</button>
+            </div>
+          </form>
+        </section>
+
+        <section id="search" class="card section-card">
+          <div class="section-heading">
+            <div>
+              <span class="step">Step 3</span>
+              <h2>Read, filter, and search</h2>
+            </div>
+            <button id="refresh-button" class="button secondary">Refresh</button>
+          </div>
+
+          <div class="filters">
+            <label>
+              Search title
+              <input id="search-input" type="search" placeholder="Search in loaded records" />
+            </label>
+
+            <label>
+              Priority index
+              <select id="priority-filter">
+                <option value="all">All priorities</option>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+              </select>
+            </label>
+
+            <label>
+              Completed index
+              <select id="completed-filter">
+                <option value="all">All statuses</option>
+                <option value="true">Completed</option>
+                <option value="false">Pending</option>
+              </select>
+            </label>
+
+            <label>
+              Sort by cursor direction
+              <select id="sort-direction">
+                <option value="prev">Newest first</option>
+                <option value="next">Oldest first</option>
+              </select>
+            </label>
+          </div>
+
+          <p id="query-explanation" class="query-explanation">Reading records from the <code>createdAt</code> index.</p>
+
+          <div id="task-list" class="task-list" aria-live="polite"></div>
+          <p id="empty-state" class="empty-state">No records found.</p>
+        </section>
+
+        <section id="pagination" class="card section-card">
+          <div class="section-heading">
+            <div>
+              <span class="step">Step 4</span>
+              <h2>Cursor pagination</h2>
+            </div>
+            <span id="page-indicator" class="pill">Page 1</span>
+          </div>
+
+          <p>IndexedDB cursors visit records one at a time. This demo skips records for earlier pages and stops after the selected page size.</p>
+
+          <div class="pagination-controls">
+            <label>
+              Page size
+              <select id="page-size">
+                <option value="3">3</option>
+                <option value="5" selected>5</option>
+                <option value="10">10</option>
+              </select>
+            </label>
+            <button id="previous-page-button" class="button secondary">Previous</button>
+            <button id="next-page-button" class="button secondary">Next</button>
+          </div>
+        </section>
+
+        <section id="advanced" class="card section-card">
+          <div class="section-heading">
+            <div>
+              <span class="step">Step 5</span>
+              <h2>Transactions and bulk operations</h2>
+            </div>
+          </div>
+
+          <div class="action-grid">
+            <button id="seed-button" class="button secondary">Add sample records</button>
+            <button id="complete-all-button" class="button secondary">Complete all tasks</button>
+            <button id="delete-completed-button" class="button danger-outline">Delete completed</button>
+            <button id="count-priority-button" class="button secondary">Count high priority</button>
+          </div>
+
+          <div class="concept-box">
+            <h3>Why transactions matter</h3>
+            <p>
+              Every IndexedDB read or write happens inside a transaction. A
+              <code>readonly</code> transaction reads data, while <code>readwrite</code> can add, update, or delete it.
+            </p>
+          </div>
+        </section>
+
+        <section id="backup" class="card section-card">
+          <div class="section-heading">
+            <div>
+              <span class="step">Step 6</span>
+              <h2>Backup and database management</h2>
+            </div>
+          </div>
+
+          <div class="action-grid">
+            <button id="export-button" class="button secondary">Export JSON</button>
+            <label class="button secondary file-button">
+              Import JSON
+              <input id="import-input" type="file" accept="application/json" hidden />
+            </label>
+            <button id="clear-button" class="button danger-outline">Clear object store</button>
+            <button id="delete-db-button" class="button danger">Delete database</button>
+          </div>
+        </section>
+
+        <section class="card section-card">
+          <div class="section-heading">
+            <div>
+              <span class="step">Activity</span>
+              <h2>Request and transaction log</h2>
+            </div>
+            <button id="clear-log-button" class="button secondary">Clear log</button>
+          </div>
+          <div id="activity-log" class="activity-log" aria-live="polite"></div>
+        </section>
+      </section>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
