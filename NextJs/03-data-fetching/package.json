@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "better-sqlite3": "^9.6.0",
-    "eslint-config-tanmay": "file:../../../eslint-config-tanmay",
+    "eslint-config-custom": "file:../../../eslint-config-custom",
     "next": "16.2.10",
     "react": "19.2.4",
     "react-dom": "19.2.4"

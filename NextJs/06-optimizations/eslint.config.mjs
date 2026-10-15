@@ -1,3 +1,3 @@
-import nextConfig from "eslint-config-tanmay/next";
+import nextConfig from "eslint-config-custom/next";
 
 export default nextConfig;
